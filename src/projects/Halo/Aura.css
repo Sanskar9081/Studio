@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --aura-ground: #EFEFEE;
+  --aura-dim-ground: #E4E4E2;
+  --aura-ink: #0D0D0F;
+  --aura-ink-sec: #43444A;
+  --aura-muted: #6E6F76;
+  --aura-accent: #2F5BFF;
+  --aura-lift: #7C97FF;
+  --aura-hairline: rgba(13, 13, 15, 0.12);
+  
+  --font-display: 'Archivo', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  
+  --ease-technical: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aura-project {
+  font-family: var(--font-display);
+  background-color: var(--aura-ground);
+  color: var(--aura-ink);
+  position: relative;
+  overflow: clip; /* Fixes sticky positioning while preventing horizontal scroll */
+}
+
+.aura-project * {
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.aura-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-weight: 800;
+}
+.aura-display-tight {
+  letter-spacing: -0.055em;
+  line-height: 0.74;
+  font-weight: 900;
+}
+
+.aura-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.aura-pill {
+  border-radius: 999px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--aura-hairline);
+  color: var(--aura-ink);
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease-technical), border-color 0.3s var(--ease-technical);
+}
+.aura-pill:hover {
+  background-color: var(--aura-hairline);
+}
+
+.aura-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: color-mix(in srgb, var(--aura-ground) 82%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--aura-hairline);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.aura-nav-link {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease-technical);
+}
+.aura-nav-link:hover {
+  border-bottom: 1px solid var(--aura-accent);
+}
+
+.aura-hairline-top {
+  border-top: 1px solid var(--aura-hairline);
+}
+.aura-hairline-bottom {
+  border-bottom: 1px solid var(--aura-hairline);
+}
+
+html:not(.reduce-motion) .aura-project.js .reveal-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.25s var(--ease-technical), transform 1.25s var(--ease-technical);
+}
+html:not(.reduce-motion) .aura-project.js .reveal-fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Chroma Key Mask for Subject using SVG filter */
+.aura-subject-mask {
+  width: min(58vw, 940px);
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  right: -4vw;
+  filter: drop-shadow(0 26px 34px rgba(13,13,15,0.20)) url(#chroma-key);
+  transform-origin: bottom center;
+}
+
+.aura-variant-section {
+  transition: background-color 0.7s var(--ease-technical), color 0.7s var(--ease-technical);
+}

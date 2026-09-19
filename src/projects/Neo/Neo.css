@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap');
+
+:root {
+  --neo-green: #ccff00;
+  --neo-purple: #7000ff;
+  --neo-pink: #ff0099;
+  --neo-black: #0a0a0a;
+  --neo-white: #ffffff;
+  
+  --font-neo-display: 'Space Grotesk', sans-serif;
+  --font-neo-body: 'DM Sans', sans-serif;
+  
+  --neo-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base resets specifically for Neo Brutalism */
+.neo-project {
+  font-family: var(--font-neo-body);
+  background-color: var(--neo-white);
+  color: var(--neo-black);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.neo-project * {
+  box-sizing: border-box;
+}
+
+/* Typography classes */
+.neo-headline {
+  font-family: var(--font-neo-display);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  text-transform: lowercase;
+}
+
+.neo-headline::first-letter {
+  text-transform: lowercase; /* explicitly force lowercase first */
+}
+
+/* Gradients */
+.neo-text-gradient {
+  background: linear-gradient(90deg, var(--neo-purple), var(--neo-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utilities */
+.neo-border {
+  border: 4px solid var(--neo-black);
+}
+.neo-border-sm {
+  border: 2px solid var(--neo-black);
+}
+.neo-border-white {
+  border: 2px solid var(--neo-white);
+}
+
+.neo-shadow {
+  box-shadow: 6px 6px 0px var(--neo-black);
+}
+.neo-shadow-sm {
+  box-shadow: 4px 4px 0px var(--neo-black);
+}
+
+.neo-btn {
+  font-family: var(--font-neo-display);
+  font-weight: 700;
+  text-transform: lowercase;
+  border: 4px solid var(--neo-black);
+  box-shadow: 6px 6px 0px var(--neo-black);
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  transition: transform 0.2s var(--neo-bounce);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.neo-btn:hover {
+  transform: scale(1.05);
+}
+.neo-btn:active {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 0px var(--neo-black);
+  translate: 4px 4px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+.neo-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg) scale(1.05); }
+  25% { transform: rotate(-5deg) scale(1.05); }
+  75% { transform: rotate(5deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1.05); }
+}
+.neo-wobble:hover {
+  animation: wobble 0.5s ease-in-out;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.neo-marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+/* Accordion Specific */
+.neo-details {
+  border: 4px solid var(--neo-black);
+  box-shadow: 6px 6px 0px var(--neo-black);
+  background: var(--neo-white);
+  margin-bottom: 1.5rem;
+}
+.neo-details summary {
+  padding: 1.5rem;
+  font-family: var(--font-neo-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+.neo-details summary::-webkit-details-marker {
+  display: none;
+}
+.neo-details[open] summary {
+  background: #f3f4f6;
+  border-bottom: 4px solid var(--neo-black);
+}
+.neo-details summary .neo-icon {
+  transition: transform 0.3s var(--neo-bounce);
+}
+.neo-details[open] summary .neo-icon {
+  transform: rotate(45deg);
+}
+.neo-details p {
+  padding: 1.5rem;
+  font-family: var(--font-neo-body);
+}
+
+/* Sticker System */
+.neo-sticker {
+  position: absolute;
+  font-size: 3rem;
+  background: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
