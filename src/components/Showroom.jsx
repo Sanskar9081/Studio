@@ -10,7 +10,7 @@ const projects = [
     type: 'Bakery', 
     line: 'A warm, delicious digital experience for a modern bakery.', 
     theme: '#bb675b',
-    visual: '/assets/cake_room_preview_1789490721253.jpg',
+    visual: '/assets/hero-projects/cake-room.png',
     video: '/assets/projects/cake-room-demo.mp4'
   },
   { 
@@ -19,7 +19,7 @@ const projects = [
     type: 'Salon', 
     line: 'A refined digital experience for a modern salon and beauty studio.', 
     theme: '#d9a3a9',
-    visual: '/assets/brew_beans_preview_1789490737209.jpg',
+    visual: '/assets/hero-projects/velora-salon.png',
     video: '/assets/projects/velora-salon-demo.mp4'
   },
   { 
@@ -28,7 +28,7 @@ const projects = [
     type: 'Luxury Watch Maison', 
     line: 'A mesmerizing digital experience for an avant-garde luxury watch maison.', 
     theme: '#51748c',
-    visual: '/assets/smilecare_preview_1789490751836.jpg',
+    visual: '/assets/hero-projects/eternis.png',
     video: '/assets/projects/eternis-demo.mp4'
   },
   { 
