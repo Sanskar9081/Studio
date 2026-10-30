@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollManager from './components/ScrollManager';
 
 import Navigation from './components/Navigation';
@@ -47,6 +48,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollManager />
+      <Analytics />
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<Home />} />
